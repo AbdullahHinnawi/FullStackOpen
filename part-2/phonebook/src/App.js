@@ -65,10 +65,14 @@ const App = () => {
             }, 5000);
           })
           .catch((error) => {
-            console.log(error);
-            setNotificationMessage(
-              `Information of ${alreadyAddedPerson.name} has already been removed from the server`
-            );
+            console.log(error.response);
+            if (error.response.status === 404) {
+              setNotificationMessage(
+                `Information of ${alreadyAddedPerson.name} has already been removed from the server`
+              );
+            }
+            setNotificationMessage(error.response.data.error);
+
             setTimeout(() => {
               setNotificationMessage(null);
             }, 5000);
@@ -82,17 +86,23 @@ const App = () => {
         number: newNumber,
       };
 
-      personsService.create(newPerson).then((createdPerson) => {
-        setPersons(persons.concat(createdPerson));
-        setNewName('');
-        setNewNumber('');
-        setNotificationMessage(`${newName} added successfully!`);
-        setSuccess(true);
-        setTimeout(() => {
-          setNotificationMessage(null);
-          setSuccess(false);
-        }, 5000);
-      });
+      personsService
+        .create(newPerson)
+        .then((createdPerson) => {
+          setPersons(persons.concat(createdPerson));
+          setNewName('');
+          setNewNumber('');
+          setNotificationMessage(`${newName} added successfully!`);
+          setSuccess(true);
+          setTimeout(() => {
+            setNotificationMessage(null);
+            setSuccess(false);
+          }, 5000);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+          setNotificationMessage(error.response.data.error);
+        });
     }
   };
 
