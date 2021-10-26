@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/blogs/617722eddb39a83bbd9fe63b
+Content-Type: application/json
+
+{
+    "title": "Blog 1",
+    "author":"Author 1",
+    "url": "https://fullstackopen.com/",
+    "likes": 3
+}
