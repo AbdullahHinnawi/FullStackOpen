@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
     "test": "NODE_ENV=test jest --verbose --runInBand",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "start:test": "NODE_ENV=test node index.js"
   },
   "author": "Abdullah Hinnawi",
   "license": "ISC",

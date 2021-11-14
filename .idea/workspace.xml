@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7742c04-6a11-4ec4-8002-c32b3575f8da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part-5/bloglist-frontend/screenshots/bloglistApp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part-5/bloglist-frontend/screenshots/ciTestResults.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part-5/bloglist-frontend/screenshots/cypressTestResults.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/part-3/phonebook-backend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/part-3/phonebook-backend/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/part-3/phonebook-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/part-3/phonebook-backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/part-3/phonebook-backend/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/part-3/phonebook-backend/mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part-4/bloglist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/part-4/bloglist/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part-4/bloglist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/part-4/bloglist/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part-4/bloglist/requests/login.rest" beforeDir="false" afterPath="$PROJECT_DIR$/part-4/bloglist/requests/login.rest" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,13 +23,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part-4/bloglist/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor>
-                <caret column="15" selection-start-column="15" selection-end-column="15" />
+                <caret selection-end-line="4" selection-end-column="31" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/part-5/bloglist-frontend/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="276">
+                <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               </first_editor>
               <second_editor />
             </state>
@@ -44,6 +61,7 @@
         <option value="$PROJECT_DIR$/part-2/countries/README.md" />
         <option value="$PROJECT_DIR$/part-2/phonebook/README.md" />
         <option value="$PROJECT_DIR$/part-4/bloglist/README.md" />
+        <option value="$PROJECT_DIR$/part-5/bloglist-frontend/README.md" />
       </list>
     </option>
   </component>
@@ -74,13 +92,20 @@
             <path>
               <item name="FullStackOpen" type="b2602c69:ProjectViewProjectNode" />
               <item name="FullStackOpen" type="462c0819:PsiDirectoryNode" />
-              <item name="part-4" type="462c0819:PsiDirectoryNode" />
+              <item name="part-5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FullStackOpen" type="b2602c69:ProjectViewProjectNode" />
               <item name="FullStackOpen" type="462c0819:PsiDirectoryNode" />
-              <item name="part-4" type="462c0819:PsiDirectoryNode" />
-              <item name="bloglist" type="462c0819:PsiDirectoryNode" />
+              <item name="part-5" type="462c0819:PsiDirectoryNode" />
+              <item name="bloglist-frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FullStackOpen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FullStackOpen" type="462c0819:PsiDirectoryNode" />
+              <item name="part-5" type="462c0819:PsiDirectoryNode" />
+              <item name="bloglist-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -99,6 +124,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/part-5/bloglist-frontend/screenshots" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/part-2/phonebook/screenshots" />
     </key>
@@ -133,17 +161,18 @@
       <workItem from="1630931663559" duration="2148000" />
       <workItem from="1635251527942" duration="78000" />
       <workItem from="1635251611671" duration="45000" />
+      <workItem from="1636892999784" duration="383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3605000" />
+    <option name="totallyTimeSpent" value="3988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1680" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17155068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17338218" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -268,7 +297,17 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor>
-            <caret column="15" selection-start-column="15" selection-end-column="15" />
+            <caret selection-end-line="4" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part-5/bloglist-frontend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="276">
+            <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           </first_editor>
           <second_editor />
         </state>
