@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIDIiLCJpZCI6IjYxNzZjYTk5MWQyMTFhODI3MTk5MGM4MyIsImlhdCI6MTYzNTE5ODIxNCwiZXhwIjoxNjM1MjAxODE0fQ.YrisfXhO7pSlVadJiqQ5DvKUyAWDR2dRQsev3ptEV9I
+
+{
+    "title": "Blog 544",
+    "author":"Author 466",
+    "url": "https://fullstackopen.com/",
+    "likes": 3
+}
