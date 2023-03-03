@@ -1,5 +1,3 @@
-Full Stack Open
-
 # Deep Dive Into Modern Web Development
 
 ## [Full Stack Open](https://fullstackopen.com/en/)
