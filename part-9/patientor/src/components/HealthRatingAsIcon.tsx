@@ -9,7 +9,7 @@ type HealthRatingAsIconProps = {
 const HealthRatingAsIcon = ({
   healthRating,
 }: HealthRatingAsIconProps): React.ReactElement => {
-  switch (healthRating) {
+  switch (Number(healthRating)) {
     case 0:
       return (
         <Typography variant="body1">

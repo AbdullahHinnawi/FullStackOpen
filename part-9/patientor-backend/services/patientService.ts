@@ -1,9 +1,9 @@
 import patientsData from '../data/patients'
 
-import { Patient, NewPatient, PaitentSsnExcluded } from '../types/types';
+import { Patient, NewPatient, PaitentSsnExcluded, EntryWithoutId, Entry } from '../types/types';
 import { v4 as uuidv4 } from 'uuid';
 
-const patients: Array<Patient> = patientsData as Array<Patient>
+let patients: Array<Patient> = patientsData as Array<Patient>
 
 
 // you can use Array<Patient> OR Patient[]
@@ -46,6 +46,24 @@ const addPatient = (newPatientEntry: NewPatient): Patient => {
     return newPatient;
 }
 
+const addEntry = (patientId: string, entry: EntryWithoutId): Entry => {
+
+    const uniqueId = uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+
+    const newEntry = {
+        id: uniqueId,
+        ...entry
+    }
+    let relevantPatient: Patient | undefined = patients.find(p => p.id === patientId)
+    if (relevantPatient) {
+        relevantPatient = { ...relevantPatient, entries: [...relevantPatient?.entries, newEntry] }
+        patients = patients.filter(p => p.id !== patientId).concat([relevantPatient])
+        return newEntry;
+    } else {
+        throw new Error(`Patient with id ${patientId} not found`)
+    }
+}
+
 
 
 
@@ -56,5 +74,6 @@ export default {
     getPatientById,
     getPatientsSsnExcluded,
     getPatientByIdSsnExcluded,
-    addPatient
+    addPatient,
+    addEntry
 }

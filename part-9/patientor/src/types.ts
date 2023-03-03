@@ -73,3 +73,18 @@ export type Entry =
   | OccupationalHealthcareEntry
   | HealthCheckEntry;
 
+// Define special omit for unions
+// type UnionOmit<T, K extends string | number | symbol> = T extends unknown ? Omit<T, K> : never;
+
+export type EntryFormValues = {
+  description: string;
+  date: string;
+  specialist: string;
+  type: EntryType;
+  diagnosisCodes?: Array<Diagnosis['code']>;
+  healthCheckRating: HealthCheckRating;
+  discharge: Discharge;
+  employerName: string;
+  sickLeave?: SickLeave;
+};
+
