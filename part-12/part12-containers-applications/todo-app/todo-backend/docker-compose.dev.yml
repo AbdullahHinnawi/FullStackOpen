@@ -1,0 +1,36 @@
+services:
+  mongo:
+    image: mongo #https://hub.docker.com/ https://hub.docker.com/_/mongo
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+# Bind mount is the act of binding a file or directory on the host machine to a file or directory in the container.
+# A bind mount is done by adding a -v flag with container run. The syntax is -v FILE-IN-HOST:FILE-IN-CONTAINER.
+# Another way: The bind mount is declared under key volumes in docker-compose.dev.yml.
+# The syntax is the same, FILE-IN-HOST:FILE-IN-CONTAINER.
+    volumes:
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./mongo_data:/data/db
+  redis:
+    image: redis #https://hub.docker.com/_/redis
+    ports:
+      - 6378:6379
+    # by default Redis does not persist the data. However, the persistence is easy to toggle on.
+    command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
+    volumes: # Declare the volume
+      - ./redis_data:/data
+
+# To start MongoDB & Redis:
+# docker compose -f docker-compose.dev.yml up
+# OR with -d it will run it in the background
+# docker compose -f docker-compose.dev.yml up -d
+# You can view the output logs with:
+# docker compose -f docker-compose.dev.yml logs -f
+
+# To end MongoDB & Redis:
+# docker compose -f docker-compose.dev.yml down
+# To end MongoDB & Redis process and ensure that no process is left, use:
+# docker compose -f docker-compose.dev.yml down --volumes
