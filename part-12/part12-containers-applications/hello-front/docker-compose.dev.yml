@@ -1,0 +1,30 @@
+services:
+  app:
+    image: hello-front-dev
+    build:
+      context: . # The context will pick this directory as the "build context"
+      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+    ports:
+      - 5173:5173
+    container_name: hello-front-dev # This will name the container hello-front-dev
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro # ro means that the volume will be read-only.
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app # wait for the frontend container to be started
+  #debug-helper:
+    #image: busybox
+
+# Run the application in development mode:
+# docker compose -f docker-compose.dev.yml up
+
+# To install new dependencies e.g. axios inside the contaier use (the container sould be already running)
+# docker exec hello-front-dev npm install axios
+# Or add axios to the package.json and run docker build again.
+

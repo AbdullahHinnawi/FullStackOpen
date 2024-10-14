@@ -22,15 +22,31 @@ services:
     command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
     volumes: # Declare the volume
       - ./redis_data:/data
+  server:
+    image: todo-backend-server-dev
+    build:
+      context: . # The context will pick this directory as the "build context"
+      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./app:/src/app
+    ports:
+      - 3000:3000
+    environment:
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database # @mongo matches the db service name "mongo"
+      - REDIS_URL=redis://redis:6379 # //redis should match the service name "in our case redis". 6379 matches the application port.
 
-# To start MongoDB & Redis:
+
+# To start mongo & redis & server services use:
 # docker compose -f docker-compose.dev.yml up
 # OR with -d it will run it in the background
 # docker compose -f docker-compose.dev.yml up -d
 # You can view the output logs with:
 # docker compose -f docker-compose.dev.yml logs -f
 
-# To end MongoDB & Redis:
+# To end mongo & redis & server services:
 # docker compose -f docker-compose.dev.yml down
-# To end MongoDB & Redis process and ensure that no process is left, use:
+# To end MongoDB & Redis & server processes and ensure that no process is left, use:
 # docker compose -f docker-compose.dev.yml down --volumes
+# OR use:
+# docker container ls
+# docker kill <CONTAINER_ID>

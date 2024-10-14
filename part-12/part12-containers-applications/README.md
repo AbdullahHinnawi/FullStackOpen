@@ -2,6 +2,11 @@
 
 [Docs](https://docs.docker.com/get-started/)
 
+More in-depth container courses
+
+- [DevOps with Docker](https://devopswithdocker.com/)
+- [DevOps with Kubernetes](https://devopswithkubernetes.com/)
+
 ## Commands
 
 Create a container from an image or run image within a container

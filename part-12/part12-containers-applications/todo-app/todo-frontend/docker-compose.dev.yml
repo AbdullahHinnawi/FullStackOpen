@@ -1,0 +1,22 @@
+services:
+  app:
+    image: todo-front-dev
+    build:
+      context: . # The context will pick this directory as the "build context"
+      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+    ports:
+      - 5173:5173
+    container_name: todo-front-dev # This will name the container todo-front-dev
+  #debug-helper:
+    #image: busybox
+
+
+# to run the app use:
+# docker compose -f docker-compose.dev.yml up
+
+
+# To install new dependencies e.g. axios inside the contaier use (the container sould be running)
+# docker exec todo-front-dev npm install axios
+# Or add axios to the package.json and run docker build again.

@@ -14,7 +14,7 @@ When running the server, visit http://localhost:3000 to see visit counter, or gi
 
 The application has /todos crud which requires a MongoDB. Pass connection url with env `MONGO_URL`
 
-For example: "MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev"
+For example: "MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database REDIS_URL=redis://localhost:6378 npm run dev"
 
 # Redis
 
